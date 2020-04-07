@@ -1,12 +1,16 @@
 import React from "react";
 import axios from "axios";
 import Loader from "./Loader.js";
-import Nav from "./Nav.js";
 import Basket from "./Basket.js";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import Button from "@material-ui/core/Button";
 import ProductDetails from "./ProductDetails.js";
 
 class Product extends React.Component {
   state = {
+    currentImg: "",
+    open: false,
     product: {
       categories: [],
       price: 0,
@@ -33,6 +37,13 @@ class Product extends React.Component {
     });
   }
 
+  handleOpen = (img) => {
+    this.setState({ open: true, currentImg: img });
+  };
+  handleClose = () => {
+    this.setState({ open: false });
+  };
+
   componentWillMount() {
     axios
       .get(
@@ -56,9 +67,11 @@ class Product extends React.Component {
   render() {
     return (
       <>
-        <Nav showFilters={false} />
         <div id="product">
           <div>
+            <Button variant="outlined" href="/" color="primary">
+              Go Back
+            </Button>
             <h1>{this.state.product.name}</h1>
             <div id="gallery">
               {this.state.product.photos.map((image, i) => (
@@ -66,6 +79,7 @@ class Product extends React.Component {
                   key={i}
                   className="photo"
                   style={{ backgroundImage: `url(${image})` }}
+                  onClick={() => this.handleOpen(image)}
                 />
               ))}
             </div>
@@ -98,6 +112,24 @@ class Product extends React.Component {
             </div>
           </div>
           <Loader loading={this.state.loading} />
+          <Dialog
+            maxWidth="sm"
+            modal={true}
+            open={this.state.open}
+            onRequestClose={this.handleClose}
+          >
+            <DialogActions>
+              <Button onClick={this.handleClose} color="primary">
+                Close
+              </Button>
+            </DialogActions>
+            <img
+              src={this.state.currentImg}
+              alt=""
+              style={{ width: "100%" }}
+              onClick={this.handleClose}
+            />
+          </Dialog>
           <ProductDetails
             description={this.state.product.description}
             options={this.state.product.options}

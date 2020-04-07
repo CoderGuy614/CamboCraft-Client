@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
@@ -11,8 +11,8 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import axios from "axios";
-import Nav from "./Nav";
 import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
 import Copyright from "./Copyright";
 import AlbumTopSection from "./AlbumTopSection";
 
@@ -62,7 +62,6 @@ export default class Album extends React.Component {
             filterProducts={this.filterProducts}
           />
           <Container className={""} maxWidth="md">
-            {/* End hero unit */}
             <Grid container spacing={4}>
               {this.state.products.map((e, i) => (
                 <Grid item key={i} xs={12} sm={6} md={4}>
@@ -101,10 +100,17 @@ export default class Album extends React.Component {
                     </CardActions>
                   </Card>
                   <Dialog
-                    modal={false}
+                    maxWidth="sm"
+                    modal={true}
                     open={this.state.open}
+                    disableEscapeKeyDown="false"
                     onRequestClose={this.handleClose}
                   >
+                    <DialogActions>
+                      <Button onClick={this.handleClose} color="primary">
+                        Close
+                      </Button>
+                    </DialogActions>
                     <img
                       src={this.state.currentImg}
                       alt=""
