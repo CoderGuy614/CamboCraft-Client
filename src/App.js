@@ -11,8 +11,8 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route path="/Product/:id" component={Product} />
-        <Route path="/album" component={Album} />
-        <Route path="/" component={ProductList} />
+        <Route path="/" component={Album} />
+        {/* <Route path="/" component={ProductList} /> */}
       </Switch>
     </BrowserRouter>
   );

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
-import CameraIcon from "@material-ui/icons/PhotoCamera";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
@@ -10,30 +9,16 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import Link from "@material-ui/core/Link";
 import axios from "axios";
 import Nav from "./Nav";
-import IconButton from "material-ui/IconButton";
-import ZoomIn from "material-ui/svg-icons/action/zoom-in";
 import Dialog from "@material-ui/core/Dialog";
-import FlatButton from "material-ui/FlatButton";
+import Copyright from "./Copyright";
+import AlbumTopSection from "./AlbumTopSection";
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        CamboCraft
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
 export default class Album extends React.Component {
   state = {
+    showFilters: true,
     open: false,
     currentImg: "",
     loading: true,
@@ -71,59 +56,11 @@ export default class Album extends React.Component {
           <Toolbar></Toolbar>
         </AppBar>
         <main>
-          {/* Hero unit */}
-          <div className={""}>
-            <Container maxWidth="sm">
-              <Typography
-                style={{ marginTop: 15 }}
-                component="h1"
-                variant="h2"
-                align="center"
-                color="textPrimary"
-                gutterBottom
-              >
-                HandMade Clothing
-              </Typography>
-              <Typography
-                variant="h6"
-                align="center"
-                color="textSecondary"
-                paragraph
-              >
-                By Kimlang
-              </Typography>
-              <Typography
-                variant="h5"
-                align="center"
-                color="textSecondary"
-                paragraph
-              >
-                Making beautiful crochet clothing is my passion. I can make many
-                different designs, sizes and customize colors however you like.
-              </Typography>
-              <div className={""}>
-                <Grid
-                  style={{ padding: 0 }}
-                  container
-                  spacing={2}
-                  justify="center"
-                >
-                  <Grid item>
-                    <Nav
-                      showFilters="true"
-                      products={this.state.allproducts}
-                      cb={this.filterProducts}
-                    />
-                  </Grid>
-                  {/* <Grid item>
-                    <Button variant="outlined" color="primary">
-                      Secondary action
-                    </Button>
-                  </Grid> */}
-                </Grid>
-              </div>
-            </Container>
-          </div>
+          <AlbumTopSection
+            allproducts={this.state.allproducts}
+            showFilters={this.state.showFilters}
+            filterProducts={this.filterProducts}
+          />
           <Container className={""} maxWidth="md">
             {/* End hero unit */}
             <Grid container spacing={4}>
