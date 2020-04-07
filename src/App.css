@@ -1,38 +1,414 @@
-.App {
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+}
+
+.hidden {
+  display: none;
+}
+
+button,
+select {
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+div.info {
+  margin: 10px;
+}
+.card {
+  height: "100%";
+  display: "flex";
+  flex-direction: "column";
+}
+/* Nav */
+
+nav {
+  font-family: "Roboto", sans-serif;
+  /* text-transform: uppercase; */
+  display: grid;
+  /* background-color: lightpink; */
+  /* border-radius: 15px; */
+  /* grid-template-columns:; */
+  /* grid-column-gap: 0px; */
+  /* box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1); */
+  /* padding: 15px 35px; */
+  align-items: center;
+}
+
+nav li :hover {
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: rgb(241, 223, 223);
+  /* opacity: 0.8; */
+  cursor: pointer;
+}
+
+nav h2 {
+  text-align: center;
+  padding: 0px;
+  margin: 5px;
+}
+
+nav img {
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.nav-logo {
+  width: 300px;
+  margin: 0px;
+}
+#nav-logo {
+  width: 300px;
+  height: 125px;
+}
+
+.nav-categories {
+  border-radius: 0px;
+  margin: 5px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav li {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  margin-right: 2px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.categoryTag {
+  padding: 10px 10px 10px;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  border: 1px solid #e8e3e3;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.categoryTag.selected {
+  border-color: white !important;
+  background-color: #00cdbc;
+  box-shadow: 2px 4px 10px #ccc;
+}
+
+.categoryTag.selected span {
+  color: white !important;
+}
+
+nav a i.fas {
+  display: block;
+  font-size: 30px;
+  color: #474747;
+}
+
+nav select {
+  background: white;
+  padding: 10px;
+  border: 1px solid #bfbfbf;
+  height: 34px;
+  font-size: 13px;
+}
+
+nav input {
+  height: 34px;
+  border: 1px solid #bfbfbf;
+  border-radius: 3px;
+  font-size: 13px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+#logo {
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 120px;
+}
+
+/* Page */
+
+#page {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+}
+
+/* products */
+
+.product {
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+  text-decoration: none;
+  color: #000;
+}
+
+.product .photo {
+  background-color: #02c7b9;
+  height: 200px;
+  border-radius: 5px;
+  background-position: center;
+  background-size: cover;
+}
+
+.product h3 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.categories {
+  padding: 0;
+  list-style: none;
+}
+
+.categories li {
+  display: inline-block;
+  margin-right: 5px;
   color: white;
+  padding: 1px 5px 2px 5px;
+  border-radius: 2px;
 }
 
-.App-link {
-  color: #61dafb;
+.info .price,
+.info .likes {
+  margin-right: 20px;
+  font-size: 18px;
+  text-shadow: lightpink;
 }
 
-@keyframes App-logo-spin {
+.info .inStock .time. .delivery {
+  font-size: 18px;
+}
+
+.info i {
+  margin-right: 5px;
+  font-size: 20px;
+}
+.price i {
+  color: lightgreen;
+  margin: 3px;
+}
+.inStock i {
+  color: lightpink;
+  margin: 3px;
+}
+.time i {
+  color: lightslategray;
+  margin: 3px;
+}
+.delivery i {
+  color: royalblue;
+  margin: 3px;
+}
+
+/* product */
+#product {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 250px auto 350px;
+  grid-column-gap: 20px;
+  align-items: start;
+}
+
+#product h1 {
+  font-size: 30px;
+  margin-top: 0;
+}
+
+#product h2 {
+  margin: 10px 0;
+  border-bottom: 1px solid #dadada;
+  padding-bottom: 20px;
+}
+
+/* Gallery */
+
+#gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  margin-bottom: 20px;
+}
+
+#gallery .photo {
+  background-color: #02c7b9;
+  background-position: center;
+  background-size: cover;
+  height: 150px;
+  border-radius: 4px;
+}
+
+/* Menu */
+
+#menu h3 {
+  margin-top: 30px;
+}
+
+#menu ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#menu li {
+  display: block;
+  padding: 10px 0;
+  border-bottom: 1px dashed #eee8e8;
+}
+
+#menu li .price {
+  float: right;
+  text-align: right;
+  user-select: none;
+}
+
+#menu li i {
+  background: #02c7b9;
+  padding: 8px;
+  color: #fff;
+  font-size: 10px;
+  margin-left: 40px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.footer {
+  margin: 20px;
+}
+
+/* Basket */
+
+#basket {
+  background: #f9fbf6;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+#basket h2 {
+  margin-top: 0;
+  border-bottom: none;
+}
+
+#basket ul {
+  padding: 0;
+  margin: 0;
+}
+
+#basket li {
+  list-style: none;
+  display: block;
+  padding: 10px 0;
+  border-bottom: 1px dashed #eee8e8;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  user-select: none;
+}
+
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
+
   to {
+    opacity: 100;
+  }
+}
+
+#basket li i {
+  background: #ff0000;
+  padding: 5px;
+  color: #fff;
+  font-size: 8px;
+  margin-right: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#basket li .price {
+  float: right;
+}
+
+#total {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+#total .price {
+  float: right;
+}
+
+#total button {
+  display: block;
+  width: 100%;
+  background: #02c7b9;
+  color: #fff;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 15px;
+}
+
+#loader svg {
+  animation: 2s linear infinite svg-animation;
+  max-width: 20px;
+}
+
+@keyframes svg-animation {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+#loader circle {
+  animation: 1.4s ease-in-out infinite both circle-animation;
+  display: block;
+  fill: transparent;
+  stroke: #2f3d4c;
+  stroke-linecap: round;
+  stroke-dasharray: 283;
+  stroke-dashoffset: 280;
+  stroke-width: 10px;
+  transform-origin: 50% 50%;
+}
+
+@keyframes circle-animation {
+  0%,
+  25% {
+    stroke-dashoffset: 280;
+    transform: rotate(0);
+  }
+
+  50%,
+  75% {
+    stroke-dashoffset: 75;
+    transform: rotate(45deg);
+  }
+
+  100% {
+    stroke-dashoffset: 280;
     transform: rotate(360deg);
   }
 }
