@@ -58,12 +58,6 @@ class Nav extends React.Component {
   render() {
     return (
       <nav>
-        {/* <Link to="/">
-          <div className="nav-logo">
-            <img id="nav-logo" src={navLogo} />
-          </div>
-        </Link> */}
-
         <div className="nav-categories">
           <ul className={this.props.showFilters ? "" : "hidden"}>
             <h2>Choose Types </h2>
@@ -78,10 +72,10 @@ class Nav extends React.Component {
             <li
               id="outfit"
               onClick={() => {
-                this.filterCategory("Full Set");
+                this.filterCategory("Outfit");
               }}
             >
-              <ToggleOutfitColor colored={this.isFilled("Full Set")} />
+              <ToggleOutfitColor colored={this.isFilled("Outfit")} />
             </li>
             <li
               id="bikini"
