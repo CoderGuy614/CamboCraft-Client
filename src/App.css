@@ -194,7 +194,7 @@ nav input {
   text-shadow: lightpink;
 }
 
-.info .inStock .time. .delivery {
+span.inStock {
   font-size: 18px;
 }
 
@@ -204,7 +204,7 @@ nav input {
 }
 .price i {
   color: lightgreen;
-  margin: 3px;
+  margin: 2px;
 }
 .inStock i {
   color: lightpink;

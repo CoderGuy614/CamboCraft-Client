@@ -77,10 +77,11 @@ export default class Album extends React.Component {
                       <div className="info">
                         <span className="price">
                           <i className="fas fa-dollar-sign" />{" "}
-                          {e.avg.toFixed(2)}
+                          {e.minPrice.toFixed(2)}
                         </span>
                         <span className="inStock">
-                          <i className="fas fa-store" /> In Stock:{" "}
+                          <i className="fas fa-store" />{" "}
+                          {`In Stock: ${e.inStock}`}
                         </span>
                       </div>
                       <Typography gutterBottom variant="h5" component="h2">
@@ -103,7 +104,6 @@ export default class Album extends React.Component {
                     maxWidth="sm"
                     modal={true}
                     open={this.state.open}
-                    disableEscapeKeyDown="false"
                     onRequestClose={this.handleClose}
                   >
                     <DialogActions>

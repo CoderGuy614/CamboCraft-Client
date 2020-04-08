@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 export default class ProductCard extends React.Component {
   render() {
     let product = this.props.product;
-
+    {
+      console.log(product);
+    }
     return (
       <Link to={`/product/${product._id}`} className="product">
         <div
