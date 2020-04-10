@@ -19,7 +19,6 @@ class Product extends React.Component {
       photos: [],
       avg: 0,
     },
-
     basketItems: [],
     loading: true,
   };
@@ -43,6 +42,10 @@ class Product extends React.Component {
   handleClose = () => {
     this.setState({ open: false });
   };
+
+  // componentWillReceiveProps(props) {
+  //   this.setState({ addToCart: props.addToCart });
+  // }
 
   componentWillMount() {
     axios
@@ -130,6 +133,14 @@ class Product extends React.Component {
               onClick={this.handleClose}
             />
           </Dialog>
+
+          {/* <button
+            onClick={() => this.props.addToCart(this.state.basketItems)}
+            id="addButton"
+          >
+            Add Items to Shopping Cart
+          </button> */}
+
           <ProductDetails
             description={this.state.product.description}
             options={this.state.product.options}

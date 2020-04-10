@@ -41,6 +41,37 @@ nav {
   align-items: center;
 }
 
+.navbar ul {
+  display: flex;
+  margin-right: 25px;
+}
+
+.navbar a {
+  color: black;
+  padding: 0.45rem;
+  margin: 0 0.25rem;
+  font-family: "Roboto";
+}
+
+.navbar a:hover {
+  color: var(--light-color);
+}
+
+.navbar .welcome span {
+  margin-right: 0.6rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 2rem;
+  z-index: 1;
+  width: 100%;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
 nav li :hover {
   border: 1px solid black;
   border-radius: 15px;
@@ -358,6 +389,17 @@ span.inStock {
 }
 
 #total button {
+  display: block;
+  width: 100%;
+  background: #02c7b9;
+  color: #fff;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 15px;
+}
+#addButton {
   display: block;
   width: 100%;
   background: #02c7b9;

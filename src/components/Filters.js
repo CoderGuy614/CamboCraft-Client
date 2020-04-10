@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import navLogo from "./Images/NavLogo.png";
 import axios from "axios";
 import ToggleBraColor from "./Icons/ToggleBraColor";
 import ToggleOutfitColor from "./Icons/ToggleOutfitColor";
@@ -8,7 +6,7 @@ import ToggleBikiniColor from "./Icons/ToggleBikiniColor";
 import ToggleDressColor from "./Icons/ToggleDressColor";
 import ToggleSkirtColor from "./Icons/ToggleSkirtColor";
 
-class Nav extends React.Component {
+class Filters extends React.Component {
   state = {
     categories: [],
     filteredCategories: [],
@@ -114,4 +112,4 @@ class Nav extends React.Component {
   }
 }
 
-export default Nav;
+export default Filters;

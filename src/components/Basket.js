@@ -30,7 +30,7 @@ export default class Basket extends React.Component {
   render() {
     return (
       <div id="basket">
-        <h2>Your Basket</h2>
+        <h2>Choose Item(s)</h2>
         <ul>
           {this.state.basketItems.map((item, i) => {
             return (
@@ -49,7 +49,7 @@ export default class Basket extends React.Component {
         <div id="total">
           <span>Total</span>
           <span className="price">${this.calcTotalPrice()}</span>
-          <button>Place Order</button>
+          <button> Add items to Shopping Cart</button>
         </div>
       </div>
     );

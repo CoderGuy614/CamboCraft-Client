@@ -1,5 +1,4 @@
 import React from "react";
-import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -7,14 +6,14 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
-import Toolbar from "@material-ui/core/Toolbar";
+import TopNavbar from "../components/TopNavBar";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import axios from "axios";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
-import Copyright from "./Copyright";
 import AlbumTopSection from "./AlbumTopSection";
+import Footer from "./Footer";
 
 export default class Album extends React.Component {
   state = {
@@ -52,9 +51,6 @@ export default class Album extends React.Component {
     return (
       <React.Fragment>
         <CssBaseline />
-        <AppBar position="relative" color="transparent">
-          <Toolbar></Toolbar>
-        </AppBar>
         <main>
           <AlbumTopSection
             allproducts={this.state.allproducts}
@@ -123,22 +119,7 @@ export default class Album extends React.Component {
             </Grid>
           </Container>
         </main>
-        {/* Footer */}
-        <footer className={"footer"}>
-          <Typography variant="h6" align="center" gutterBottom>
-            Thank you for loooking!
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            align="center"
-            color="textSecondary"
-            component="p"
-          >
-            Please contact Kimlang to see and try any of these designs
-          </Typography>
-          <Copyright />
-        </footer>
-        {/* End footer */}
+        <Footer />
       </React.Fragment>
     );
   }

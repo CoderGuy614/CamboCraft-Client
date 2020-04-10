@@ -2,7 +2,7 @@ import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-import Nav from "./Nav";
+import Filters from "./Filters";
 
 export default function AlbumTopSection(props) {
   return (
@@ -28,7 +28,7 @@ export default function AlbumTopSection(props) {
         <div className={""}>
           <Grid style={{ padding: 0 }} container spacing={2} justify="center">
             <Grid item>
-              <Nav
+              <Filters
                 showFilters={props.showFilters}
                 products={props.allproducts}
                 cb={props.filterProducts}
